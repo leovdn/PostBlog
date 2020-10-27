@@ -5,7 +5,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   padding: 5vh;
-  background-color: #2b2d3b;
+  background-color: #20212c;
   color: #ddd;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,7 @@ body {
 }
 
 .post {
+  background-color: #2b2d3b;
   border: 2px solid rgb(148, 95, 132);
   border-radius: 10px;
   margin-top: 48px;
@@ -57,4 +58,44 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+}
+
+.loader {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  transition: opacity 0.3s ease-in;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+.circle {
+  background-color: rgb(240, 136, 250);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 5px;
+  animation: bounce 0.5s ease-in infinite;
+}
+
+.circle:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
